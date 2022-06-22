@@ -9,21 +9,23 @@
 </head>
 <body>
     <main>
-        <div>
-            <img src="./src/images/logo.svg" alt="Fylo">
-            <img src="./src/images/icon-document.svg" alt="Document">
-            <img src="./src/images/icon-folder.svg" alt="Folder">
-            <img src="./src/images/icon-upload.svg" alt="Upload">
+        <div class="top">
+            <h1><img src="./src/images/logo.svg" alt="Fylo"></h1>
+            <img class="icon document" src="./src/images/icon-document.svg" alt="Document">
+            <img class="icon folder" src="./src/images/icon-folder.svg" alt="Folder">
+            <img class="icon upload" src="./src/images/icon-upload.svg" alt="Upload">    
         </div>
-        <div>
-            <p>You’ve used 815 GB of your storage</p>
-            <div></div>
-            0 GB
-            1000 GB
-            <div>
-                <p>185 GB Left</p>
+        <div class="bottom">
+            <p>You’ve used <span class="used">815 GB</span> of your storage</p>
+            <div class="loading">
+                <div class="bar"></div>
+            </div>
+            <div class="bar-data">
+                <p class="align-left">0 GB</p>
+                <p class="align-right">1000 GB</p>    
             </div>
         </div>
+        <p class="bottom-bottom"><span class="num">185</span> GB Left</p>
     </main>
     <footer class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

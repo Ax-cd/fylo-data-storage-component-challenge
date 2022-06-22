@@ -4,17 +4,11 @@ The designs were created to the following widths:
 
 - Mobile: 375px
 - Desktop: 1440px
-
-### Body Copy
-
-- Font size: 14px
- 
-ADD ANIMATION FOR LOADING BAR*/
+*/
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
-/* font-family: 'Raleway', sans-serif; 400 700 */
 :root {
     --fourteen-px: calc(14rem / 16);
-    --gradient: linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    --gradient: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%) );
     --pale-blue: hsl(243, 100%, 93%);
     --gray-blue: hsl(229, 7%, 55%);
     --dark-blue: hsl(228, 56%, 26%);
@@ -24,4 +18,142 @@ ADD ANIMATION FOR LOADING BAR*/
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+body {
+    background: url("./images/bg-mobile.png") no-repeat;
+}
+main {
+    margin: 7rem auto 0;
+    width: 90%;
+}
+
+.top {
+    background-color: var(--dark-blue);
+    width: 21rem;
+    height: 13.5rem;
+    padding: 2.5rem;
+    margin: 1rem auto;
+    line-height: 2;
+    border-radius: 10px 100px 10px 10px;
+    box-shadow: 0px 12px 8px hsla(0, 0%, 0%, .4);
+}
+.icon {
+    background-color: var(--darkest-blue);
+    padding: .8rem .88rem;
+    margin-top: 1rem;
+    margin-right: .8rem;
+    border-radius: 10px;
+}
+.folder {
+    padding: .915rem .8rem;
+}
+.upload {
+    padding: 1.05rem .8rem;
+}
+.bottom {
+    background-color: var(--dark-blue);
+    width: 21rem;
+    height: 11.5rem;
+    padding: 2rem 1.5rem 1rem;
+    text-align: center;
+    border-radius: 10px;
+    font-size: var(--fourteen-px);
+    font-family: 'Raleway', sans-serif;
+    color: var(--pale-blue);
+    font-weight: 400;
+}
+.used {
+    font-weight: 700;
+}
+
+.loading {
+    width: 18rem;
+    position: relative;
+    margin: 1rem auto;
+}
+.bar {
+    background-color: var(--darkest-blue);
+    width: 100%;
+    height: 1.5rem;
+    border-radius: 20px;
+    margin-bottom: .5rem;
+    position: relative;
+}
+.bar::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 80%;
+    height: 80%;
+    border-radius: 20px;
+    background-image: var(--gradient);
+    animation: load 2000ms ease-in-out;
+}
+.bar::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 13.4rem;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: aliceblue;
+    box-shadow: 0px 0px 10px white;
+    animation: follow 1800ms ease-out;
+}
+.bar-data {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+}
+@keyframes load {
+    0% {
+        width: 5%;
+    }
+    100% {
+        width: 80%;
+    }
+}
+@keyframes follow {
+    0% {
+        left: 2px;
+    }
+    100% {
+        left: 13.4rem;
+    }
+}
+
+.bottom-bottom {
+    font-size: var(--fourteen-px);
+    font-family: 'Raleway', sans-serif;
+    width: 12rem;
+    height: 5rem;
+    padding: 1rem 0;
+    background-color: hsl(0, 0%, 100%);
+    color: var(--gray-blue);
+    border-radius: 10px;
+    position: relative;
+    top: -2.2rem;
+    margin: 0 auto 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.num {
+    color: var(--darkest-blue);
+    font-size: 3rem;
+    margin: 0 .5rem;
+}
+
+.attribution {
+    font-family: 'Raleway', sans-serif;
+    color: hsl(0, 0%, 100%);
+    font-size: var(--fourteen-px);
+    text-align: center;
 }
