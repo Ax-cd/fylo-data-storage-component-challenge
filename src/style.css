@@ -1,0 +1,27 @@
+/* ## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+### Body Copy
+
+- Font size: 14px
+ 
+ADD ANIMATION FOR LOADING BAR*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+/* font-family: 'Raleway', sans-serif; 400 700 */
+:root {
+    --fourteen-px: calc(14rem / 16);
+    --gradient: linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    --pale-blue: hsl(243, 100%, 93%);
+    --gray-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --darkest-blue: hsl(229, 57%, 11%);
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
