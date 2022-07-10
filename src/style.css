@@ -1,7 +1,3 @@
-/* ## Layout
-- Mobile: 375px * 667
-- Desktop: 1440px * 800
-*/
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 :root {
     --fourteen-px: calc(14rem / 16);
@@ -35,7 +31,6 @@ body {
 }
 .top {
     border-radius: 12px 100px 12px 12px;
-    padding: 3rem 0 1.5rem 2.5rem;
 }
 .icon {
     background-color: var(--darkest-blue);
@@ -53,13 +48,13 @@ body {
 
 .bottom {
     border-radius: 10px;
+    padding: 2rem 1.5rem 1rem;
 }
 .used {
     font-weight: 700;
 }
 
 .loading {
-    /* width: 18rem; */
     position: relative;
     margin: 1rem auto;
 }
@@ -144,20 +139,21 @@ body {
     text-align: center;
 }
 
-@media screen and (max-width: 50em) { /*MOBILE*/
+/*MOBILE*/
+@media screen and (max-width: 60em) {
     body {
         background: url("./images/bg-mobile.png") no-repeat;
     }
 
     .top {
         height: 13rem;
+        padding: 3rem 0 1.5rem 2.5rem;
         margin-top: 5rem;
         margin-bottom: 1rem;
     }
 
     .bottom {
         height: 10.5rem;
-        padding: 2rem 1.5rem 1rem;
         margin: 0 auto;
         text-align: center;
     }
@@ -169,8 +165,63 @@ body {
     }
 }
 
-@media screen and (min-width: 50em) { /*DESKTOP*/
+/*DESKTOP*/
+@media screen and (min-width: 25em) {
     body {
         background: var(--darkest-blue) url("./images/bg-desktop.png") no-repeat bottom;
+    }
+}
+@media screen and (min-width: 60em) {
+    main {
+        width: 80%;
+        margin: 0 auto 2rem;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+    }
+    .top {
+        width: 60%;
+        height: 11rem;
+        padding: 2rem 0 2rem 2rem;
+        margin-right: 1rem;
+        margin-left: 4rem;
+    }
+    .bottom {
+        width: 100%;
+        height: 9rem;
+    }
+    .bar::after {
+        left: 77%;
+    }
+    @keyframes follow {
+        0% {
+            left: 2%;
+        }
+        100% {
+            left: 77%;
+        }
+    }
+
+    .bottom-bottom {
+        width: 25.5rem;
+        padding: .7rem 0 .7rem 2rem;
+        position: relative;
+        top: -7rem;
+        right: 21%;
+    }
+    .bottom-bottom::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-bottom: 20px solid hsl(0, 0%, 100%);
+        position: relative;
+        top: 1.8rem;
+        left: .8rem;
+        transform: rotate(45deg);
+    }
+    .num {
+        font-size: 2rem;
     }
 }
