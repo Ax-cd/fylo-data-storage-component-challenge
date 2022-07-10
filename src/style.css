@@ -1,9 +1,6 @@
 /* ## Layout
-
-The designs were created to the following widths:
-
-- Mobile: 375px
-- Desktop: 1440px
+- Mobile: 375px * 667
+- Desktop: 1440px * 800
 */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 :root {
@@ -19,28 +16,31 @@ The designs were created to the following widths:
     padding: 0;
     margin: 0;
 }
+
 body {
-    background: url("./images/bg-mobile.png") no-repeat;
-}
-main {
-    margin: 7rem auto 0;
-    width: 90%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 1.5rem;
+    font-size: var(--fourteen-px);
+    font-family: 'Raleway', sans-serif;
+    color: var(--pale-blue);
+    font-weight: 400;
 }
 
-.top {
+.top, .bottom {
     background-color: var(--dark-blue);
-    width: 21rem;
-    height: 13.5rem;
-    padding: 2.5rem;
-    margin: 1rem auto;
-    line-height: 2;
-    border-radius: 10px 100px 10px 10px;
-    box-shadow: 0px 12px 8px hsla(0, 0%, 0%, .4);
+    box-shadow: 0px 12px 20px hsla(0, 0%, 0%, .4);
+}
+.top {
+    border-radius: 12px 100px 12px 12px;
+    padding: 3rem 0 1.5rem 2.5rem;
 }
 .icon {
     background-color: var(--darkest-blue);
     padding: .8rem .88rem;
-    margin-top: 1rem;
+    margin-top: 1.2rem;
     margin-right: .8rem;
     border-radius: 10px;
 }
@@ -50,24 +50,16 @@ main {
 .upload {
     padding: 1.05rem .8rem;
 }
+
 .bottom {
-    background-color: var(--dark-blue);
-    width: 21rem;
-    height: 11.5rem;
-    padding: 2rem 1.5rem 1rem;
-    text-align: center;
     border-radius: 10px;
-    font-size: var(--fourteen-px);
-    font-family: 'Raleway', sans-serif;
-    color: var(--pale-blue);
-    font-weight: 400;
 }
 .used {
     font-weight: 700;
 }
 
 .loading {
-    width: 18rem;
+    /* width: 18rem; */
     position: relative;
     margin: 1rem auto;
 }
@@ -96,12 +88,12 @@ main {
     display: block;
     position: absolute;
     top: 4px;
-    left: 13.4rem;
+    left: 75%;
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: aliceblue;
-    box-shadow: 0px 0px 10px white;
+    background-color: hsl(0, 0%, 100%);
+    box-shadow: 0px 0px 5px hsl(0, 0%, 100%);
     animation: follow 1800ms ease-out;
 }
 .bar-data {
@@ -120,30 +112,24 @@ main {
 }
 @keyframes follow {
     0% {
-        left: 2px;
+        left: 2%;
     }
     100% {
-        left: 13.4rem;
+        left: 75%;
     }
 }
 
 .bottom-bottom {
-    font-size: var(--fourteen-px);
-    font-family: 'Raleway', sans-serif;
-    width: 12rem;
-    height: 5rem;
-    padding: 1rem 0;
     background-color: hsl(0, 0%, 100%);
     color: var(--gray-blue);
     border-radius: 10px;
-    position: relative;
-    top: -2.2rem;
-    margin: 0 auto 2rem;
     text-transform: uppercase;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 12rem;
+    padding: .6rem 0;
 }
 .num {
     color: var(--darkest-blue);
@@ -156,4 +142,35 @@ main {
     color: hsl(0, 0%, 100%);
     font-size: var(--fourteen-px);
     text-align: center;
+}
+
+@media screen and (max-width: 50em) { /*MOBILE*/
+    body {
+        background: url("./images/bg-mobile.png") no-repeat;
+    }
+
+    .top {
+        height: 13rem;
+        margin-top: 5rem;
+        margin-bottom: 1rem;
+    }
+
+    .bottom {
+        height: 10.5rem;
+        padding: 2rem 1.5rem 1rem;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .bottom-bottom {
+        position: relative;
+        top: -2.2rem;
+        margin: 0 auto 2rem;
+    }
+}
+
+@media screen and (min-width: 50em) { /*DESKTOP*/
+    body {
+        background: var(--darkest-blue) url("./images/bg-desktop.png") no-repeat bottom;
+    }
 }
