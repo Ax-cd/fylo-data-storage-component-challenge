@@ -173,21 +173,20 @@ body {
 }
 @media screen and (min-width: 60em) {
     main {
-        width: 80%;
+        width: 60%;
         margin: 0 auto 2rem;
         display: flex;
         align-items: flex-end;
-        justify-content: space-around;
+        justify-content: safe;
     }
     .top {
-        width: 60%;
+        min-width: 18rem;
         height: 11rem;
         padding: 2rem 0 2rem 2rem;
         margin-right: 1rem;
-        margin-left: 4rem;
     }
     .bottom {
-        width: 100%;
+        min-width: 60%;
         height: 9rem;
     }
     .bar::after {
@@ -207,7 +206,7 @@ body {
         padding: .7rem 0 .7rem 2rem;
         position: relative;
         top: -7rem;
-        right: 21%;
+        right: 32%;
     }
     .bottom-bottom::after {
         content: '';
